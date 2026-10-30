@@ -1,0 +1,7 @@
+La URL es: http://127.0.0.1:5500/index.html
+el protocolo es: http
+el host es: 127.0.0.1
+el puerto es: 5500
+la ruta es: /index.html
+al copiar la ruta "/promociones.html" sale el siguiente mensaje "Cannot GET /promociones.html" el cual significa que no encontró esa ruta porque no existe.
+En este proyecto de rueda libre html cumplirá el rol de dar estructura, css estilos y javascript la funcionalidad.
