@@ -5,3 +5,7 @@ el puerto es: 5500
 la ruta es: /index.html
 al copiar la ruta "/promociones.html" sale el siguiente mensaje "Cannot GET /promociones.html" el cual significa que no encontró esa ruta porque no existe.
 En este proyecto de rueda libre html cumplirá el rol de dar estructura, css estilos y javascript la funcionalidad.
+
+Se tomo la decisión de remplazar los los pocos div que se tenian por section y aside que son etiquetas semanticas, cómo se indica, porque no era gecesario agrupaciones genericas.
+
+Se organizó la estructura del contenido, dandole orden, revisando la jerarquia de los titulos, es decir de los h1, h2, h3... y verificación de que funcionaran los enlaces.
