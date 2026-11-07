@@ -9,3 +9,67 @@ En este proyecto de rueda libre html cumplirá el rol de dar estructura, css est
 Se tomo la decisión de remplazar los los pocos div que se tenian por section y aside que son etiquetas semanticas, cómo se indica, porque no era gecesario agrupaciones genericas.
 
 Se organizó la estructura del contenido, dandole orden, revisando la jerarquia de los titulos, es decir de los h1, h2, h3... y verificación de que funcionaran los enlaces.
+
+Se creo un un formulario dividido en 3 secciones o grupos utilizando el metodo POST.
+LOs tres grupos fueron los datos del cliente, datos del alquiler y la confirmación. En los campos se indica el tipo de dato que se debe ingresar y además se colocaron restricciones, para evitar que el cliente o el usuario ingrese datos erroneos o para minimizar la posibilidad de ingresar datos invalidos.
+Por eso en tipo de bicicleta se utilizó un select para que el usuario seleccione sólo una de las opciones, al igual que con radio.
+
+Parametros dados por el cliente:
+
+Nombre completo: required y minlength="3".
+
+Documento: required y pattern="[0-9]{6,10}".
+
+Correo: required y type="email".
+
+Celular: required y pattern="3[0-9]{9}".
+
+Fecha: required, min="2026-11-01" y max="2026-12-31".
+
+Tipo de bicicleta: required.
+
+Plan de alquiler: required.
+
+Cantidad: required, min="1", max="6" y step="1".
+
+Comentarios: maxlength="300".
+
+Políticas de alquiler: required.
+
+JUSTIFICACIÓN DE LOS PARAMETROS:
+
+DOCUMENTO:
+Se utilizó el patrón [0-9]{6,10} para permitir únicamente números y exigir una longitud entre 6 y 10 dígitos.
+
+CELULAR:
+Se utilizó el patrón 3[0-9]{9} para exigir que el primer dígito sea 3 y que los nueve restantes sean números.
+
+FECHA:
+Se utilizaron los atributos min y max para restringir las reservas al periodo comprendido entre el 1 de noviembre y el 31 de diciembre de 2026.
+
+Se aplicaron todos los parametros dados por el cliente, y de esta forma se evita ambiguedades en la recolección de los datos a la hora de la reserva.
+Se realizaron pruebas, las cuales fueron las siguientes con sus respectivos resultados.
+
+| Campo | Dato de prueba | Resultado esperado | Resultado obtenido |
+|---|---|---|---|
+| Nombre | Ana | Rechazado: menos de 3 caracteres | Rechazado |
+| Documento | 12345 | Rechazado: menos de 6 dígitos | Rechazado |
+| Documento | 12345ABC | Rechazado: contiene letras | Rechazado |
+| Correo | juan@gmail | Rechazado: formato de correo inválido | invalido |
+| Celular | 2001234567 | Rechazado: no comienza por 3 | Rechazado |
+| Celular | 300123456 | Rechazado: tiene 9 dígitos | Rechazado |
+| Fecha | 2027-01-15 | Rechazado: supera la fecha máxima | Rechazado |
+| Cantidad | 7 | Rechazado: supera el máximo permitido | Rechazado |
+| Comentarios | 301 caracteres | Rechazado: supera el máximo permitido | Rechazado |
+| Políticas | Casilla sin marcar | Rechazado: aceptación obligatoria | Rechazado |
+
+Probé webAIM y me gustó la combinación de #14213D y #FAF6EF, entonces esa es la que usaré.
+
+Decisiones de estilos:
+
+El color Crema se utilizará como fondo general.
+El Azul Noche será el color principal para textos, títulos y encabezados.
+El Gris Asfalto se utilizará para textos secundarios.
+El Verde Ruta se utilizará en enlaces y botones principales, acompañándolo de texto blanco.
+El Naranja Pedal se utilizará en elementos destacados y botones secundarios, acompañado de texto Azul Noche.
+No se uso el color naranja pedal, por feo.

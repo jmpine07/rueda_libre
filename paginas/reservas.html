@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas - Rueda Libre</title>
+    <link rel="stylesheet" href="../estilos.css">
 </head>
 <body>
 
@@ -26,6 +27,109 @@
     </header>
 
     <main>
+
+        <section id="formulario-reserva">
+            
+            <h2>Formulario de reserva</h2>
+
+            <form method="post">
+
+                <fieldset>
+                    
+                    <legend>Tus datos</legend>
+                    <label for="nombre">Nombre completo:</label>
+
+                    <input type="text" id="nombre" name="nombre" required minlength="3">
+                    
+                    <br><br>
+
+                    <label for="documento">Documento de identidad:</label>
+                    
+                    <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="El documento debe contener únicamente números y tener entre 6 y 10 dígitos.">
+
+                    <br><br>
+                    
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                    
+                    <br><br>
+                    
+                    <label for="celular">Número de celular:</label>
+                    <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" title="El celular debe contener exactamente 10 dígitos y comenzar por 3.">
+                
+                </fieldset>
+
+                <fieldset>
+                    
+                    <legend>Tu alquiler</legend>
+                    <label for="bicicleta">Tipo de bicicleta:</label>
+                    <select id="bicicleta" name="bicicleta" required>
+                        
+                        <option value="">Selecciona una bicicleta</option>
+                        <option value="urbana">Urbana</option>
+                        <option value="montana">Montaña</option>
+                        <option value="electrica">Eléctrica</option>
+                    
+                    </select>
+                    
+                    <br><br>
+                    
+                    <label for="fecha">Fecha de alquiler:</label>
+                    <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31">
+                    
+                    <br><br>
+                    
+                    <p>Plan del alquiler:</p>
+                    
+                    <label for="una-hora">1 hora</label>
+                    <input type="radio" id="una-hora" name="plan" value="1 hora" required>
+                    
+                    <br>
+                    
+                    <label for="medio-dia">Medio día (4 horas)</label>
+                    <input type="radio" id="medio-dia" name="plan" value="medio dia">
+                    
+                    <br>
+                    
+                    <label for="dia-completo">Día completo</label>
+                    <input type="radio" id="dia-completo" name="plan" value="dia completo">
+
+                    <br><br>
+
+                    <label for="cantidad">Cantidad de bicicletas:</label>
+                    <input type="number" id="cantidad" name="cantidad" required min="1" max="6" step="1">
+                
+                </fieldset>
+
+                <fieldset>
+                    
+                    <legend>Confirmación</legend>
+                    
+                    <label for="aceptar">Confirmo que los datos proporcionados son correctos.</label>
+                    <input type="checkbox" id="aceptar" name="aceptar" value="si" required>
+                    
+                    <br><br>
+                    
+                    <label for="comentarios">comentarios adicionales:</label>
+                    
+                    <br>
+                    
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="40" maxlength="300" placeholder="Escribe aquí tus comentarios..."></textarea>
+
+                    <br><br>
+
+                    <label for="politicas"> Acepto las políticas de alquiler de Rueda Libre.</label>
+                    <input type="checkbox" id="politicas" name="politicas" value="aceptadas" required>
+
+                </fieldset>
+
+                <br>
+
+                <button type="submit">Enviar reserva</button>
+
+            </form>
+
+        </section>
 
         <section>
 
