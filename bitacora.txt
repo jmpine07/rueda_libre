@@ -126,3 +126,21 @@ Pruebas responsive mobile-first (360 px, 768 px y 1280 px):
 - Problema 4: en resoluciones mayores, el contenido no aprovechaba el espacio disponible. Solución: se activaron media queries a partir de 768 px para recuperar la distribución del MiniReto 1, y a 1200 px se ajustó el ancho máximo de contenido para escritorio.
 
 Conclusión: el sitio queda preparado para móvil, tablet y escritorio con una base mobile-first, mejor legibilidad, contenido ordenado y sin desbordamiento visual.
+
+Prueba de catálogo con Bootstrap 5 (grilla por clases):
+- Versión propia: la flota se distribuía con CSS manual en `css/styles.css`, con reglas como `.flota-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3); }` y la estructura interna de cada tarjeta con Flexbox (`.modelo-card`, `.modelo-card__body`, `.modelo-card__link`). Esta solución exigía de 20 a 30 líneas de CSS de distribución y más control sobre cada detalle.
+- Versión Bootstrap: en `pruebas/catalogo-bootstrap.html` la distribución se resuelve solo con clases de grilla: `row g-4`, `col-12`, `col-sm-6`, `col-lg-4`, `col-xl-3`. En otras palabras, la disposición se logra con un conjunto pequeño de clases del sistema, no con reglas propias.
+- Lo que Bootstrap da sin esfuerzo: un layout responsivo consistente, gutters automáticos, columnas ajustadas por breakpoint, y una estructura de cards que mantiene la alineación sin escribir media queries ni mantener un grid custom.
+- Qué se pierde frente al CSS propio: menos control total sobre el tamaño exacto de cada tarjeta, menos libertad para ajustar márgenes, alturas y comportamientos muy específicos, y más dependencia del sistema de clases del framework.
+- Conclusión: Bootstrap resulta muy práctico para prototipos y maquetación rápida, pero el CSS propio sigue siendo más preciso para un proyecto con identidad visual específica y requisitos muy puntuales.
+
+Clases utilitarias de Bootstrap utilizadas en la sección “¿Por qué Rueda Libre?”:
+- `text-center`: centra el texto y el contenido dentro de cada tarjeta y del bloque principal.
+- `row g-4`: activa el sistema de grilla y aplica separación uniforme entre columnas.
+- `col-12 col-md-6 col-xl-3`: define la distribución responsive: una columna en móvil, dos en tablet y cuatro en escritorio.
+- `bg-white border border-0 rounded-4 shadow-sm p-4`: crea la tarjeta con fondo blanco, bordes suaves, esquinas redondeadas, sombra ligera y relleno interior.
+- `fw-bold text-primary`: jerarquiza el texto destacado del beneficio con peso y color principal de la marca.
+- `d-none d-md-block`: oculta la imagen decorativa en celular y la muestra desde tablet en adelante.
+- `d-flex flex-column flex-md-row`: organiza la franja final en columna en móvil y en fila desde tablet.
+- `justify-content-between align-items-center`: alinea el texto, imagen y botón dentro de la franja final con distribución y centrado visual.
+- `btn btn-light text-primary rounded-pill px-4 py-2`: aplica un estilo de enlace destacado usando utilidades de color, relleno y bordes redondeados sin escribir CSS.
