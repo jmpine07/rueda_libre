@@ -73,3 +73,56 @@ El Gris Asfalto se utilizará para textos secundarios.
 El Verde Ruta se utilizará en enlaces y botones principales, acompañándolo de texto blanco.
 El Naranja Pedal se utilizará en elementos destacados y botones secundarios, acompañado de texto Azul Noche.
 No se uso el color naranja pedal, por feo.
+
+Bitácora de validación de herencia CSS (DevTools > Styles y Computed):
+- Propiedad que sí hereda: font-family. El body usa 'Open Sans' y el párrafo (p) hereda esa tipografía sin necesidad de definirla en el selector del párrafo.
+- Propiedad que no hereda: background-color. El body tiene fondo crema, pero un párrafo no lo hereda automáticamente; en Computed aparece background-color: rgba(0, 0, 0, 0) a menos que se aplique explícitamente a ese elemento o a un contenedor padre del texto.
+
+Bitácora de validación de la clase activo y especificidad:
+- Selector original del compañero: `#menu a { color: var(--gris-asfalto); }` tiene especificidad 0,1,1 (1 ID + 1 etiqueta).
+- Selector de la clase: `.activo { color: var(--verde-ruta); font-weight: 600; }` tiene especificidad 0,1,0 (1 clase).
+- Causa del problema: el selector `#menu a` gana por especificidad aunque la clase esté declarada después, porque una regla con ID tiene más peso que una regla con clase.
+- Corrección aplicada: se reemplazó por `#menu a.activo`, que combina ID + clase + etiqueta y pasa a tener especificidad 0,2,1, sin usar `!important` ni estilos en línea.
+- Además, se añadieron estados `:hover` y `:focus-visible` para el menú, un botón de llamada a la acción con estilo visual y un indicador de foco visible para inputs, select y textarea.
+
+Bitácora de medición de box-sizing (DevTools > Computed):
+- Se tomó como referencia una tarjeta con `width: 24rem; padding: 1.25rem; border: 1px solid`.
+- Antes de cambiar `box-sizing`: ancho total calculado = 24rem + 2.5rem + 2px = 426px aprox. (contenido + relleno + borde).
+- Después de aplicar `box-sizing: border-box`: ancho total = 384px, manteniendo el mismo ancho visual solicitado y evitando que el relleno y el borde expandan el bloque.
+- Resultado: con `border-box`, el espacio visible interno es más estable y el contenedor no se descuadra.
+
+Resumen final de la bitácora:
+- Se construyó la identidad visual de la marca con tipografías, variables, encabezados y botones consistentes en las tres páginas.
+- Se corrigieron problemas de navegación, foco y accesibilidad, y se dejó un menú claramente identificado con la página activa.
+- Se mejoró la legibilidad con tarjetas, tablas más ordenadas, formulario con espaciado adecuado y máximo ancho controlado para pantallas grandes.
+- Se incorporó la etiqueta "Nuevo" para bicicletas eléctricas y el acceso fijo a WhatsApp para atención directa.
+- Se deja el sitio listo para revisión final con una base sólida, y la principal mejora sugerida para el siguiente ciclo es añadir contenido editorial más rico y adaptaciones visuales para dispositivos móviles avanzadas.
+
+Escalado progresivo del navegador:
+- Si la ventana se estrecha poco a poco, el encabezado deja de ubicarse en una sola fila y pasa a apilar el nombre del negocio y el menú.
+- El nav sigue funcionando con wrap, por lo que los enlaces se desplazan a otra línea sin romper la composición.
+- En la zona inferior, el pie de página pasa de tres columnas a una distribución más compacta, evitando que los bloques se compriman hasta ser ilegibles.
+- Este comportamiento es intencional y facilita que la información siga organizada sin perder jerarquía visual.
+
+Cuadrícula de flota (Grid + Flexbox):
+- La cuadrícula usa `repeat(auto-fit, minmax(220px, 1fr))`, por lo que la cantidad de columnas depende del ancho disponible.
+- A 1280 px se observan 4 columnas.
+- A 900 px se observan 3 columnas.
+- A 500 px se observan 2 columnas.
+- La disposición interna de cada tarjeta usa Flexbox para que el botón "Reservar" quede siempre al final, aunque el texto varie en longitud.
+
+Layout general del boceto de Nodo Digital (Grid + Flexbox):
+- Portada: se usó Grid con dos columnas (`1.2fr 1fr`) porque el contenido textual y la imagen cumplen roles distintos y deben quedar alineados visualmente con el texto centrado verticalmente.
+- Galería de rutas: se usó Grid con tres columnas iguales para mantener una fila con las tres tarjetas y mantener la misma proporción en todas las rutas.
+- Reservas: se usó Grid con proporción 2:1 para asignar más espacio al formulario y dejar una columna menor para contacto e información.
+- Fila del formulario: se usó Grid para dos campos cortos relacionados (documento y celular), porque exige alineación precisa y un ancho uniforme en la misma fila.
+- Encabezado y pie: se usó Flexbox para ubicar marca y menú en extremos, y para distribuir los bloques del footer con alineación vertical y separación uniforme.
+- Se ajustó la terminología del proyecto para usar "Ruta" y "Rutas" en vez de "Recorrido" y "Recorridos" para mantener consistencia con el briefing del cliente.
+
+Pruebas responsive mobile-first (360 px, 768 px y 1280 px):
+- Problema 1: en 360 px, el encabezado se veía apretado porque el nombre de la marca y el menú estaban en la misma línea. Solución: el bloque del header pasó a ser columna en móvil, con el nombre arriba y el menú debajo, centrados.
+- Problema 2: la portada y la galería quedaban demasiado comprimidas en pantallas pequeñas y la imagen se desbordaba del contenedor. Solución: se pasó la portada a una sola columna, se centró el texto y se estableció `max-width: 100%` para todas las imágenes para que nunca superen el ancho disponible.
+- Problema 3: la sección de reservas y las tablas de tarifas se volvieron difíciles de leer en móvil. Solución: el layout de reservas pasó a 1 columna y el formulario se ordenó verticalmente; las tablas se redujeron en relleno y tamaño de letra para que no obligaran a desplazarse de lado.
+- Problema 4: en resoluciones mayores, el contenido no aprovechaba el espacio disponible. Solución: se activaron media queries a partir de 768 px para recuperar la distribución del MiniReto 1, y a 1200 px se ajustó el ancho máximo de contenido para escritorio.
+
+Conclusión: el sitio queda preparado para móvil, tablet y escritorio con una base mobile-first, mejor legibilidad, contenido ordenado y sin desbordamiento visual.

@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas - Rueda Libre</title>
-    <link rel="stylesheet" href="../estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-    <header>
+    <header class="site-header">
+        <div class="brand">
+            <h1>Reservas - Rueda Libre</h1>
+        </div>
 
-        <h1>Reservas - Rueda Libre</h1>
-
-        <nav aria-label="Navegación principal">
+        <nav aria-label="Navegación principal" class="main-nav">
             
-            <ul>
+            <ul id="menu">
                 
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="tarifas.html">Tarifas y rutas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="reservas.html" class="activo" aria-current="page">Reservas</a></li>
 
             </ul>
 
@@ -26,156 +30,134 @@
 
     </header>
 
-    <main>
+    <main class="contenedor">
 
-        <section id="formulario-reserva">
-            
-            <h2>Formulario de reserva</h2>
-
-            <form method="post">
-
-                <fieldset>
-                    
-                    <legend>Tus datos</legend>
-                    <label for="nombre">Nombre completo:</label>
-
-                    <input type="text" id="nombre" name="nombre" required minlength="3">
-                    
-                    <br><br>
-
-                    <label for="documento">Documento de identidad:</label>
-                    
-                    <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="El documento debe contener únicamente números y tener entre 6 y 10 dígitos.">
-
-                    <br><br>
-                    
-                    <label for="correo">Correo electrónico:</label>
-                    <input type="email" id="correo" name="correo" required>
-                    
-                    <br><br>
-                    
-                    <label for="celular">Número de celular:</label>
-                    <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" title="El celular debe contener exactamente 10 dígitos y comenzar por 3.">
+        <div class="reserva-layout">
+            <section id="formulario-reserva">
                 
-                </fieldset>
+                <h2>Formulario de reserva</h2>
 
-                <fieldset>
-                    
-                    <legend>Tu alquiler</legend>
-                    <label for="bicicleta">Tipo de bicicleta:</label>
-                    <select id="bicicleta" name="bicicleta" required>
+                <form method="post">
+
+                    <fieldset>
                         
-                        <option value="">Selecciona una bicicleta</option>
-                        <option value="urbana">Urbana</option>
-                        <option value="montana">Montaña</option>
-                        <option value="electrica">Eléctrica</option>
+                        <legend>Tus datos</legend>
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required minlength="3">
+
+                        <div class="fila-datos">
+                            <div>
+                                <label for="documento">Documento de identidad:</label>
+                                <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="El documento debe contener únicamente números y tener entre 6 y 10 dígitos.">
+                            </div>
+
+                            <div>
+                                <label for="celular">Número de celular:</label>
+                                <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" title="El celular debe contener exactamente 10 dígitos y comenzar por 3.">
+                            </div>
+                        </div>
+
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" required>
                     
-                    </select>
+                    </fieldset>
+
+                    <fieldset>
+                        
+                        <legend>Tu alquiler</legend>
+                        <label for="bicicleta">Tipo de bicicleta:</label>
+                        <select id="bicicleta" name="bicicleta" required>
+                            
+                            <option value="">Selecciona una bicicleta</option>
+                            <option value="urbana">Urbana</option>
+                            <option value="montana">Montaña</option>
+                            <option value="electrica">Eléctrica</option>
+                        
+                        </select>
+                        
+                        <label for="fecha">Fecha de alquiler:</label>
+                        <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31">
+                        
+                        <p>Plan del alquiler:</p>
+                        
+                        <div class="opciones-radio">
+                            <label for="una-hora"><input type="radio" id="una-hora" name="plan" value="1 hora" required> 1 hora</label>
+                            <label for="medio-dia"><input type="radio" id="medio-dia" name="plan" value="medio dia"> Medio día (4 horas)</label>
+                            <label for="dia-completo"><input type="radio" id="dia-completo" name="plan" value="dia completo"> Día completo</label>
+                        </div>
+
+                        <label for="cantidad">Cantidad de bicicletas:</label>
+                        <input type="number" id="cantidad" name="cantidad" required min="1" max="6" step="1">
                     
-                    <br><br>
-                    
-                    <label for="fecha">Fecha de alquiler:</label>
-                    <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31">
-                    
-                    <br><br>
-                    
-                    <p>Plan del alquiler:</p>
-                    
-                    <label for="una-hora">1 hora</label>
-                    <input type="radio" id="una-hora" name="plan" value="1 hora" required>
-                    
-                    <br>
-                    
-                    <label for="medio-dia">Medio día (4 horas)</label>
-                    <input type="radio" id="medio-dia" name="plan" value="medio dia">
-                    
-                    <br>
-                    
-                    <label for="dia-completo">Día completo</label>
-                    <input type="radio" id="dia-completo" name="plan" value="dia completo">
+                    </fieldset>
 
-                    <br><br>
+                    <fieldset>
+                        
+                        <legend>Confirmación</legend>
+                        
+                        <label for="aceptar"><input type="checkbox" id="aceptar" name="aceptar" value="si" required> Confirmo que los datos proporcionados son correctos.</label>
+                        
+                        <label for="comentarios">Comentarios adicionales:</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" cols="40" maxlength="300" placeholder="Escribe aquí tus comentarios..."></textarea>
 
-                    <label for="cantidad">Cantidad de bicicletas:</label>
-                    <input type="number" id="cantidad" name="cantidad" required min="1" max="6" step="1">
-                
-                </fieldset>
+                        <label for="politicas"><input type="checkbox" id="politicas" name="politicas" value="aceptadas" required> Acepto las políticas de alquiler de Rueda Libre.</label>
 
-                <fieldset>
-                    
-                    <legend>Confirmación</legend>
-                    
-                    <label for="aceptar">Confirmo que los datos proporcionados son correctos.</label>
-                    <input type="checkbox" id="aceptar" name="aceptar" value="si" required>
-                    
-                    <br><br>
-                    
-                    <label for="comentarios">comentarios adicionales:</label>
-                    
-                    <br>
-                    
-                    <textarea id="comentarios" name="comentarios" rows="4" cols="40" maxlength="300" placeholder="Escribe aquí tus comentarios..."></textarea>
+                    </fieldset>
 
-                    <br><br>
+                    <button type="submit">Enviar reserva</button>
 
-                    <label for="politicas"> Acepto las políticas de alquiler de Rueda Libre.</label>
-                    <input type="checkbox" id="politicas" name="politicas" value="aceptadas" required>
+                </form>
 
-                </fieldset>
+            </section>
 
-                <br>
+            <aside class="reserva-info">
+                <section>
+                    <h2>Contacto</h2>
+                    <p>
+                        Para realizar tu reserva o solicitar información,
+                        escríbenos a:
+                        <a href="mailto:contacto@ruedalibre.com.co">
+                            contacto@ruedalibre.com.co
+                        </a>
+                    </p>
+                </section>
 
-                <button type="submit">Enviar reserva</button>
+                <section>
+                    <h2>Horario de atención</h2>
+                    <dl>
+                        <dt>Lunes a viernes</dt>
+                        <dd>7:00 a. m. a 7:00 p. m.</dd>
 
-            </form>
-
-        </section>
-
-        <section>
-
-            <h2>Contacto</h2>
-
-            <p>
-                Para realizar tu reserva o solicitar información,
-                escríbenos a:
-                <a href="mailto:contacto@ruedalibre.com.co">
-                    contacto@ruedalibre.com.co
-                </a>
-            </p>
-
-        </section>
-
-        <section>
-
-            <h2>Horario de atención</h2>
-
-            <dl>
-
-                <dt>Lunes a viernes</dt>
-                <dd>7:00 a. m. a 7:00 p. m.</dd>
-
-                <dt>Sábados, domingos y festivos</dt>
-                <dd>6:00 a. m. a 2:00 p. m.</dd>
-
-            </dl>
-
-        </section>
+                        <dt>Sábados, domingos y festivos</dt>
+                        <dd>6:00 a. m. a 2:00 p. m.</dd>
+                    </dl>
+                </section>
+            </aside>
+        </div>
 
     </main>
 
-    <footer>
-        
-        <p>Rueda Libre</p>
-        
-        <p>
-            Correo:
-            <a href="mailto:contacto@ruedalibre.com.co">
-                contacto@ruedalibre.com.co
-            </a>
-        </p>
-            
-        <p>&copy; 2026 Rueda Libre.</p>
-            
+    <a class="whatsapp-float" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Rueda Libre">WhatsApp</a>
+
+    <footer class="site-footer">
+        <div class="footer-block">
+            <p class="footer-title">Rueda Libre</p>
+            <p>&copy; 2026 Rueda Libre.</p>
+        </div>
+
+        <div class="footer-block">
+            <p class="footer-title">Contacto</p>
+            <p>
+                Correo:
+                <a href="mailto:contacto@ruedalibre.com.co">contacto@ruedalibre.com.co</a>
+            </p>
+        </div>
+
+        <div class="footer-block">
+            <p class="footer-title">Horario</p>
+            <p>Lunes a viernes: 7:00 a. m. a 7:00 p. m.</p>
+            <p>Sábados y domingos: 6:00 a. m. a 2:00 p. m.</p>
+        </div>
     </footer>
     
 </body>
