@@ -100,6 +100,24 @@ Resumen final de la bitácora:
 - Se añadieron Bootstrap Icons en la navegación y en los datos de contacto para reforzar la señal visual sin perder claridad.
 - El sitio quedó consistente en inicio, tarifas y reservas, con validación de formularios, mensajes útiles y una estructura preparada para revisión final.
 
+Prototipo con Tailwind (landing nocturna):
+- Construimos el botón "Inscríbete" con Bootstrap en la versión anterior usando clases como `btn btn-primary btn-lg rounded-pill`, que encapsulan la apariencia visual en un componente listo para usar.
+- Hoy, con Tailwind, se construyó con utilidades como `inline-flex`, `rounded-full`, `bg-emerald-500`, `px-7`, `py-3`, `font-bold`, `shadow-glow`, `hover:bg-emerald-400` y `focus:ring-4`, combinando estilo y comportamiento sin necesitar un componente predefinido.
+- Diferencia clave: Bootstrap es un framework de componentes, donde se reutilizan clases semánticas y prediseñadas; Tailwind es utility-first, donde se arma la UI a partir de clases pequeñas y específicas para cada detalle.
+
+Tailwind CLI y generación de CSS:
+- Se creó `nocturna/src/input.css` con `@import "tailwindcss";` y se generó `nocturna/src/output.css` con la CLI de Tailwind.
+- En `output.css` sí aparece `bg-emerald-500`, porque esa clase se usa en la estructura HTML del prototipo. También se incluye `bg-emerald-500/10` y `bg-emerald-500/20`, porque se usan en varias partes del diseño.
+- En cambio, una clase como `bg-pink-500` no aparece en el archivo final, porque Tailwind no genera clases que no estén referenciadas en el contenido analizado. Es decir, se compila solo lo que realmente se usa y evita CSS innecesario.
+- En los botones se agregaron estados `hover` y `focus-visible`, y se sustituyó el contorno nativo por un anillo visible con `focus-visible:ring-4`, para que la navegación por teclado sea clara y accesible.
+
+Reglas del kit de componentes (Rueda Nocturna):
+- Radios de borde: `rounded-full` para botones y `rounded-2xl` para tarjetas y alertas; `rounded-xl` para inputs.
+- Escala de espaciado: base `4`, `6`, `8`, `12`, `16` para agrupaciones y padding, manteniendo proporción constante entre los componentes.
+- Colores: verde `emerald` para acción principal, ámbar para secundario, azul cielo para información, verde para éxito y ámbar para advertencia; fondo oscuro `slate-950` con superficies `slate-900` y textos `white` / `slate-300`.
+- Todas las variantes de botón comparten la misma altura, tipografía y radio para mantener consistencia visual.
+- Las alertas y los inputs usan borde, fondo suave y anillo de foco visible para una lenguaje visual uniforme en la librería de componentes.
+
 Escalado progresivo del navegador:
 - Si la ventana se estrecha poco a poco, el encabezado deja de ubicarse en una sola fila y pasa a apilar el nombre del negocio y el menú.
 - El nav sigue funcionando con wrap, por lo que los enlaces se desplazan a otra línea sin romper la composición.

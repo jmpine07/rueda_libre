@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kit de componentes - Rueda Nocturna</title>
+    <meta name="description" content="Kit de componentes de la campaña Rueda Nocturna." />
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="bg-slate-950 text-white antialiased">
+    <main class="mx-auto max-w-6xl px-6 py-12 sm:px-8 lg:px-12">
+      <header class="mb-10">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-300">Kit de componentes</p>
+        <h1 class="mt-3 text-4xl font-black text-white">Rueda Nocturna</h1>
+      </header>
+
+      <section class="space-y-10">
+        <div>
+          <h2 class="mb-4 text-2xl font-black text-white">Botones</h2>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#" class="inline-flex items-center justify-center rounded-full bg-emerald-500 px-7 py-3.5 text-base font-bold text-slate-950 shadow-[0_0_30px_rgba(16,185,129,0.45)] transition duration-200 hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300/60">
+              Botón principal
+            </a>
+            <a href="#" class="inline-flex items-center justify-center rounded-full bg-amber-400 px-7 py-3.5 text-base font-bold text-slate-950 transition duration-200 hover:bg-amber-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-200/80">
+              Botón secundario
+            </a>
+            <a href="#" class="inline-flex items-center justify-center rounded-full border border-emerald-400/60 bg-transparent px-7 py-3.5 text-base font-bold text-emerald-300 transition duration-200 hover:bg-emerald-500/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300/60">
+              Botón contorno
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="mb-4 text-2xl font-black text-white">Card</h2>
+          <article class="group max-w-xl overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900/70 shadow-[0_20px_50px_rgba(15,23,42,0.45)] transition duration-300 hover:border-emerald-400/60 hover:shadow-[0_25px_60px_rgba(16,185,129,0.18)]">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80" alt="Ruta Luces del Centro" class="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.02]" />
+            <div class="p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-4">
+                <span class="inline-flex items-center rounded-full bg-emerald-500/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-300 ring-1 ring-emerald-400/30">Fácil</span>
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Sede principal</span>
+              </div>
+
+              <h3 class="mt-4 text-2xl font-black text-white">Luces del Centro</h3>
+
+              <ul class="mt-5 space-y-3">
+                <li class="grid grid-cols-[1fr_auto] items-center border-b border-white/10 pb-2">
+                  <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Distancia</span>
+                  <span class="text-lg font-black text-white">10 km</span>
+                </li>
+                <li class="grid grid-cols-[1fr_auto] items-center border-b border-white/10 pb-2">
+                  <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Duración</span>
+                  <span class="text-lg font-black text-white">2 h</span>
+                </li>
+                <li class="grid grid-cols-[1fr_auto] items-center">
+                  <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Punto de encuentro</span>
+                  <span class="text-sm font-bold text-emerald-300">Rueda Libre</span>
+                </li>
+              </ul>
+
+              <div class="mt-6 flex items-end justify-between gap-4 border-t border-white/10 pt-4">
+                <div>
+                  <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Precio</p>
+                  <p class="mt-1 text-3xl font-black text-emerald-300">$55.000</p>
+                </div>
+                <a href="#" class="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 text-sm font-bold text-slate-950 shadow-[0_0_25px_rgba(16,185,129,0.4)] transition duration-200 hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300/60">Inscríbete</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <h2 class="mb-4 text-2xl font-black text-white">Alertas</h2>
+          <div class="space-y-4">
+            <div class="flex rounded-2xl border border-sky-400/40 bg-sky-500/10 p-4 text-sky-100 ring-1 ring-inset ring-sky-400/30" role="status">
+              <div class="mr-3 mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-sky-500/20 text-sky-200">i</div>
+              <div>
+                <p class="text-sm font-bold uppercase tracking-[0.12em] text-sky-200">Información</p>
+                <p class="mt-1 text-sm text-sky-100">La salida nocturna inicia a las 19:30 y el punto de encuentro es la sede principal.</p>
+              </div>
+            </div>
+
+            <div class="flex rounded-2xl border border-emerald-400/40 bg-emerald-500/10 p-4 text-emerald-100 ring-1 ring-inset ring-emerald-400/30" role="status" aria-live="polite" aria-label="Aviso de éxito">
+              <div class="mr-3 mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-200">✓</div>
+              <div>
+                <p class="text-sm font-bold uppercase tracking-[0.12em] text-emerald-200">Éxito</p>
+                <p class="mt-1 text-sm text-emerald-100">Tu reserva quedó registrada correctamente. Te llegará la confirmación al correo.</p>
+              </div>
+            </div>
+
+            <div class="flex rounded-2xl border border-amber-400/40 bg-amber-500/10 p-4 text-amber-100 ring-1 ring-inset ring-amber-400/30" role="alert">
+              <div class="mr-3 mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/20 text-amber-200">!</div>
+              <div>
+                <p class="text-sm font-bold uppercase tracking-[0.12em] text-amber-200">Advertencia</p>
+                <p class="mt-1 text-sm text-amber-100">Recuerda llevar tu documento de identidad para retirar la bicicleta en la sede.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="mb-4 text-2xl font-black text-white">Campos</h2>
+          <div class="max-w-xl space-y-5 rounded-[1.5rem] border border-white/10 bg-slate-900/70 p-5 shadow-[0_20px_50px_rgba(15,23,42,0.45)]">
+            <div>
+              <label for="correo" class="mb-2 block text-sm font-bold uppercase tracking-[0.12em] text-slate-300">Correo</label>
+              <input id="correo" type="email" placeholder="correo@ejemplo.com" class="w-full rounded-xl border border-slate-600 bg-slate-950/60 px-4 py-3 text-base text-white placeholder:text-slate-400 transition duration-200 focus:border-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/20" />
+              <p class="mt-2 text-sm text-slate-400">Usa tu correo principal para recibir la confirmación.</p>
+            </div>
+
+            <div>
+              <label for="celular" class="mb-2 block text-sm font-bold uppercase tracking-[0.12em] text-slate-300">Celular</label>
+              <input id="celular" type="tel" placeholder="3001234567" class="w-full rounded-xl border border-slate-600 bg-slate-950/60 px-4 py-3 text-base text-white placeholder:text-slate-400 transition duration-200 focus:border-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/20" />
+              <p class="mt-2 text-sm text-slate-400">Incluye el número con el que te contactaremos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
