@@ -96,7 +96,9 @@ Resumen final de la bitácora:
 - Se corrigieron problemas de navegación, foco y accesibilidad, y se dejó un menú claramente identificado con la página activa.
 - Se mejoró la legibilidad con tarjetas, tablas más ordenadas, formulario con espaciado adecuado y máximo ancho controlado para pantallas grandes.
 - Se incorporó la etiqueta "Nuevo" para bicicletas eléctricas y el acceso fijo a WhatsApp para atención directa.
-- Se deja el sitio listo para revisión final con una base sólida, y la principal mejora sugerida para el siguiente ciclo es añadir contenido editorial más rico y adaptaciones visuales para dispositivos móviles avanzadas.
+- Se integró Bootstrap para la grilla, los componentes y la navegación responsive, y se personalizó la identidad con variables y clases propias cargadas después del framework.
+- Se añadieron Bootstrap Icons en la navegación y en los datos de contacto para reforzar la señal visual sin perder claridad.
+- El sitio quedó consistente en inicio, tarifas y reservas, con validación de formularios, mensajes útiles y una estructura preparada para revisión final.
 
 Escalado progresivo del navegador:
 - Si la ventana se estrecha poco a poco, el encabezado deja de ubicarse en una sola fila y pasa a apilar el nombre del negocio y el menú.
@@ -144,3 +146,16 @@ Clases utilitarias de Bootstrap utilizadas en la sección “¿Por qué Rueda Li
 - `d-flex flex-column flex-md-row`: organiza la franja final en columna en móvil y en fila desde tablet.
 - `justify-content-between align-items-center`: alinea el texto, imagen y botón dentro de la franja final con distribución y centrado visual.
 - `btn btn-light text-primary rounded-pill px-4 py-2`: aplica un estilo de enlace destacado usando utilidades de color, relleno y bordes redondeados sin escribir CSS.
+
+Comparativa final de migración a Bootstrap:
+- Archivo `css/styles.css`: 312 líneas finales. El archivo se redujo desde 688 líneas antes de la limpieza, lo que representa una disminución de 376 líneas (aproximadamente 54,7%). La reducción se hizo con el objetivo de conservar solo la identidad visual y dejar la distribución a Bootstrap.
+- `index.html`: 324 líneas, con Bootstrap cargado en el head y la grilla aplicada a la portada, flota, rutas y secciones de beneficios.
+- `paginas/tarifas.html`: 187 líneas, con la estructura en dos columnas desde `lg` y las tablas conservando el estilo visual propio.
+- `paginas/reservas.html`: 147 líneas, con el formulario en columnas 8/4 desde `md` y las filas cortas con la grilla de Bootstrap, manteniendo la validación nativa del navegador.
+- Tiempo estimado de implementación: 1 sesión de trabajo, aproximadamente 40 minutos, para migración, ajuste de estilos y validación de consistencia.
+- Ventajas reales de Bootstrap: se redujo mucho el CSS de maquetación, el código se volvió más predecible y más rápido de mantener, y la grilla responde bien en móviles, tablet y escritorio sin escribir media queries en cada bloque.
+- Desventajas reales: se pierde control fino sobre detalles visuales y los estilos propios deben revisarse para no quedar opacados por los defaults del framework; además, la identidad visual del cliente requiere ajustes puntuales en varias secciones.
+- Conclusión: Bootstrap fue muy útil para la composición general de la home, tarifas y reservas, pero la identidad de la marca y los detalles de tabla/formulario siguen siendo mejorados con `styles.css`. La combinación resultó equilibrada: Bootstrap para la distribución y CSS propio para la marca y la consistencia visual final.
+
+Semana 2, día 3, minireto 12.
+Imagen del antes de la página
