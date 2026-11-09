@@ -158,4 +158,5 @@ Comparativa final de migración a Bootstrap:
 - Conclusión: Bootstrap fue muy útil para la composición general de la home, tarifas y reservas, pero la identidad de la marca y los detalles de tabla/formulario siguen siendo mejorados con `styles.css`. La combinación resultó equilibrada: Bootstrap para la distribución y CSS propio para la marca y la consistencia visual final.
 
 Semana 2, día 3, minireto 12.
-Imagen del antes de la página
+En la carpeta capturas, quedaron guardadas las imagenes antes1.jpg y antes2.jpg que muestras cómo se veía la pagina de inicio antes de los cambios y despues de los cambios, se puede ver en las imagenes despues1.jpg y despues2.jpg.
+Allí se evidencia la diferencia de colores, estilos icnonos y demás de la pagina, al igual que cambiaron los botones de azul a verde.
